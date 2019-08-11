@@ -12,20 +12,21 @@ prog() {
     printf "\r\e[K|%-*s| %3d %% %s" "$w" "$dots" "$p" "$*"; 
 }
 
-# Shitty function to download the articles
-get_articles(){
+# Shitty function to download the data
+fetch_data(){
   echo "Started downloading...."
-  local number_of_pages=84
+  local number_of_pages=$2
+  local query=$1
 
   for number in $(seq 1 $number_of_pages); do
     local ids=()
 
     prog "$number"
 
-    ids+=$(curl -ks https://api.manshar.com/api/v1/articles?page=$number | jq --raw-output '.[].id')
+    ids+=$(curl -ks https://api.manshar.com/api/v1/$query?page=$number | jq --raw-output '.[].id')
 
-    for article_id in $ids; do
-      curl -ks https://api.manshar.com/api/v1/articles/$article_id -o $article_id.json
+    for resource_id in $ids; do
+      curl -ks https://api.manshar.com/api/v1/$query/$resource_id -o $resource_id.json
     done
 
     unset ids
@@ -33,4 +34,9 @@ get_articles(){
 
 }
 
-get_articles
+users="users"
+articles="articles"
+users_pages_count=27
+articles_pages_count=84
+
+fetch_data $users $users_pages_count

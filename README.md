@@ -6,10 +6,7 @@ Some days ago, I noticed that the APIs are still active behind unsecure connecti
 I scrapped the APIs for the articles and downloaded all of the published articles in `JSON`format.
 
 # Can I use this?
-Yes you can, the APIs were public and the articles were published and public too.
+I don't know, I am just trying to save the data
 
 # Why is the body in such format?
 The writing used a tool called [carbon](https://github.com/carbon-tools/carbon), refer to it to know why the body is like this.
-
-# License
-There's none
