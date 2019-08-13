@@ -1,4 +1,4 @@
-# Manshar's data
+# [Manshar](https://github.com/manshar)'s data
 Once upon time, there was a web app called [manshar.com](https://manshar.com), it was a publishing platform for Arabic bloggers.
 For some reasons the maintainer behind it doesn't give a damn about it anymore, I thought it's gone forever.
 
