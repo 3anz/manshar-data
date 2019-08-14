@@ -1,7 +1,6 @@
 #!/bin/bash
 
-set -e
-set -o pipefail
+set -euo pipefail
 
 # Stolen from: https://unix.stackexchange.com/a/415450/162906
 prog() {
